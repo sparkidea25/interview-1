@@ -1,12 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+// import { useEffect, useState } from 'react';
 import './App.css';
+import Product from './components/product';
+import {Switch, Route} from 'react-router-dom';
+// import { ProductService } from './services/productService';
+
+
 
 function App() {
+//   const [product, setProduct] =  useState(null);
+//   useEffect(() => {
+// const productService = new ProductService();
+// productService.getProduct(1).then((products: any) => {
+// setProduct(products);
+// console.log(products);
+// })
+// .catch((error: any) => {console.log(error)});
+//   }, []);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
+        <Switch>
+          <Route path="/product/:id">
+          <Product />
+            </Route>
+          </Switch>
+
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -17,7 +37,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
